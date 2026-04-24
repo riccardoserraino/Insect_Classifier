@@ -9,11 +9,11 @@ Insects appear in the competition field as **real animals**, **printed images**,
 
 ## Repositories
 
-### 🔗 [YOLO Detection](put_url_here)
+### 🔗 [YOLO Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO.git)
 Fine-tuned **YOLOv11** model detecting 4 classes: bee, butterfly, ladybug, and text.  
 When a text label is detected, **EasyOCR** is triggered to read and classify the insect described.
 
-### 🔗 [CNN & MobileNet Classification](put_url_here)
+### 🔗 [CNN & MobileNet Detection](https://github.com/riccardoserraino/Insect_Detection_CNN_MobileNet.git)
 Earlier classification models used during prototyping:
 - **Custom CNN** — built from scratch, used as baseline
 - **MobileNet** — pretrained backbone, ready for fine-tuning
