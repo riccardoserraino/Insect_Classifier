@@ -1,9 +1,11 @@
 # Agro Insect Detection — Master Repo
 **Authors:** Riccardo Serraino, Giuliano Livi
 
-This repository links the two implementations developed to detect agricultural insects — **bee**, **butterfly**, and **ladybug** — in the context of a real field robotics competition held in **Germany, 2026**.
+This repository links the two implementations developed to detect agricultural insects — **bee**, **butterfly**, and **ladybug** — in the context of a field robotics competition held in Germany in 2026 - [FRE2026](https://www.fieldrobotevent.eu/).
 
-Insects appear in the competition field as **real animals**, **printed images**, or **puppets**, and must be detected in real time from a robot camera.
+We participated in the competition representing [Politecnico di Milano](https://www.polimi.it/) as part of the [AIRLab team](https://airlab.deib.polimi.it/).
+
+Insects appear in the competition field as **puppets**, **printed images**, or **text**, and must be detected in real time from a robot camera.
 
 ---
 
