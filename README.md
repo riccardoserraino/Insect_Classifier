@@ -11,9 +11,12 @@ Insects appear in the competition field as **puppets**, **printed images**, or *
 
 ## Repositories
 
-### 🔗 [YOLO Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO.git)
-Fine-tuned **YOLOv11** model detecting 4 classes: bee, butterfly, ladybug, and text.  
-When a text label is detected, **EasyOCR** is triggered to read and classify the insect described.
+### 🔗 [YOLOv11 Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO.git)
+**YOLOv11** model detecting 4 classes: bee, butterfly, ladybug, and text.  
+When a text label is detected, **EasyOCR** is triggered to read and classify the insect described. Full workflow testing available at this repo. 
+
+### 🔗 [YOLOv6 Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO6.git)
+**YOLOv6** model fine-tuning and training pipeline for Luxonics OAK-D Pro camera model development. Also this model will employ **EasyOCR** for text reading.
 
 ### 🔗 [CNN & MobileNet Detection](https://github.com/riccardoserraino/Insect_Detection_CNN_MobileNet.git)
 Earlier classification models used during prototyping:
@@ -28,6 +31,8 @@ Earlier classification models used during prototyping:
 |---|---|---|
 | Prototyping | Custom CNN | Baseline classifier |
 | Prototyping | MobileNet | Transfer learning |
-| Final | YOLOv11 + EasyOCR | Real-time detection, 4 classes |
+| 1st Simulation | YOLOv11 + EasyOCR | Real-time detection locally, 4 classes + text reading classification|
+| Final | YOLOv6 + EasyOCR | Model for real-time detection with Luxonics OAK-D Pro camera|
 
-For more info about the project consider opening the link of a specific repo.
+
+For more info about each project step consider opening the link of a specific repo.
