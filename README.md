@@ -32,7 +32,7 @@ Earlier classification models used during prototyping:
 | Prototyping | Custom CNN | Baseline classifier |
 | Prototyping | MobileNet | Transfer learning |
 | 1st Simulation | YOLOv11 + EasyOCR | Real-time detection locally, 4 classes + text reading classification|
-| Final | YOLOv6 + EasyOCR | Model for real-time detection with Luxonics OAK-D Pro camera|
+| Final Model| YOLOv6 | Model for real-time detection with Luxonics OAK-D Pro camera|
 
 
 For more info about each project step consider opening the link of a specific repo.
