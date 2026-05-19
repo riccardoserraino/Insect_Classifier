@@ -16,7 +16,7 @@ Insects appear in the competition field as **puppets**, **printed images**, or *
 When a text label is detected, **EasyOCR** is triggered to read and classify the insect described. Full workflow testing available at this repo. 
 
 ### 🔗 [YOLOv6 Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO6.git)
-**YOLOv6** model fine-tuning and training pipeline for Luxonics OAK-D Pro camera model development. Also this model will employ **EasyOCR** for text reading.
+**YOLOv6** (stable) model fine-tuning and training pipeline for Luxonics OAK-D Pro camera model development. Also this model will employ **EasyOCR** for text reading.
 
 ### 🔗 [CNN & MobileNet Detection](https://github.com/riccardoserraino/Insect_Detection_CNN_MobileNet.git)
 Earlier classification models used during prototyping:
