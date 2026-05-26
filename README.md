@@ -5,35 +5,59 @@ This repository links the two implementations developed to detect agricultural i
 
 We participated in the competition representing [Politecnico di Milano](https://www.polimi.it/) as part of the [AIRLab team](https://airlab.deib.polimi.it/).
 
-Insects appear in the competition field as **puppets**, **printed images**, or **text**, and must be detected in real time from a robot camera.
+Insects appear in the competition field as **puppets**, **printed images**, or **text labels**, and must be detected in real time from a robot-mounted camera.
 
 ---
 
 ## Repositories
 
 ### 🔗 [YOLOv11 Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO.git)
-**YOLOv11** model detecting 4 classes: bee, butterfly, ladybug, and text.  
-When a text label is detected, **EasyOCR** is triggered to read and classify the insect described. Full workflow testing available at this repo. 
+https://github.com/riccardoserraino/Insect_Detection_YOLO.git
 
-### 🔗 [YOLOv6 Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO6.git)
-**YOLOv6** (stable) model fine-tuning and training pipeline for Luxonics OAK-D Pro camera model development. Also this model will employ **EasyOCR** for text reading. Note that this workspace has some bugs and not fully working, but YOLOv11 turned out to work on OAK D Pro cameras. 
-
-### 🔗 [CNN & MobileNet Detection](https://github.com/riccardoserraino/Insect_Detection_CNN_MobileNet.git)
-Earlier classification models used during prototyping:
-- **Custom CNN** — built from scratch, used as baseline
-- **MobileNet** — pretrained backbone, ready for fine-tuning
+YOLOv11-based pipeline for real-time insect detection.  
+Detects **bee, butterfly, ladybug, and text regions**.  
+When text is detected, an OCR module (EasyOCR) is triggered to extract and classify the insect name.
 
 ---
 
-## Approach
+### 🔗 [OAK-D ROS2 Integration](https://github.com/riccardoserraino/OAK_Detection.git)
 
-| Stage | Model | Notes |
-|---|---|---|
-| Prototyping | Custom CNN | Baseline classifier |
-| Prototyping | MobileNet | Transfer learning |
-| Prototyping | YOLOv6 | Not fully working workspace|
-| Final | YOLOv11 + EasyOCR | Real-time detection locally, 4 classes + text reading classification|
+This repository contains the real-time deployment pipeline on the Luxonis OAK-D Pro camera.
 
+It integrates:
+- DepthAI pipeline (RGB + NN inference + Stereo/Depth)
+- YOLOv11 inference on-device
+- ROS2 bridge for image and detection streaming
+- OCR service communication (C++ -> Python)
+- Real-time crop extraction and classification feedback loop
 
+It is the robot-side execution layer responsible for running the full perception system directly on embedded vision hardware.
 
-For more info about each project step consider opening the link of a specific repo.
+---
+
+## Approach Evolution
+
+Early experiments explored multiple architectures for classification and detection. These were progressively replaced due to limitations in real-time performance, deployment complexity, and robustness in field conditions.
+
+| Stage | Model | Reason for Change |
+|------|------|------------------|
+| Baseline | Simple CNN | Limited generalization on real field data |
+| Transfer Learning | MobileNet | Improved accuracy but unstable under occlusions or multiple objects |
+| Detection (prototype) | YOLOv6 | Integration issues in ROS2 + embedded pipeline |
+| Final System | YOLOv11 + EasyOCR | Best balance of accuracy, speed, and deployability on OAK-D |
+
+YOLOv11 was selected as the final model due to:
+- strong real-time performance on edge devices
+- better robustness in cluttered environments
+- simpler ROS2 + DepthAI integration
+- improved stability for mixed inputs (images, puppets, text)
+
+---
+
+## Summary
+
+The final system combines:
+- YOLOv11 for real-time detection
+- EasyOCR for text-based insect classification
+- OAK-D edge pipeline for onboard inference
+- ROS2 architecture for modular communication between components
