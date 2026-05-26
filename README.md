@@ -12,7 +12,6 @@ Insects appear in the competition field as **puppets**, **printed images**, or *
 ## Repositories
 
 ### 🔗 [YOLOv11 Detection](https://github.com/riccardoserraino/Insect_Detection_YOLO.git)
-https://github.com/riccardoserraino/Insect_Detection_YOLO.git
 
 YOLOv11-based pipeline for real-time insect detection.  
 Detects **bee, butterfly, ladybug, and text regions**.  
