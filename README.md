@@ -1,5 +1,11 @@
 # Agro Insect Detection — Master Repo
-**Authors:** Riccardo Serraino, Giuliano Livi
+
+## Authors
+
+- Riccardo Serraino — [GitHub](https://github.com/riccardoserraino) | [LinkedIn](https://www.linkedin.com/in/riccardoserraino/)
+- Giuliano Livi — [GitHub](https://github.com/Giuliano-Livi) | [LinkedIn](https://www.linkedin.com/in/giuliano-livi-524a81335/)
+
+---
 
 This repository links the two implementations developed to detect agricultural insects — **bee**, **butterfly**, and **ladybug** — in the context of a field robotics competition held in Germany in 2026 - [FRE2026](https://www.fieldrobotevent.eu/).
 
