@@ -22,6 +22,7 @@ Insects appear in the competition field as **puppets**, **printed images**, or *
 YOLOv11-based pipeline for real-time insect detection.  
 Detects **bee, butterfly, ladybug, and text regions**.  
 When text is detected, an OCR module (EasyOCR) is triggered to extract and classify the insect name.
+P.S.: Text reading logic was not needed during competition due to rule changes.
 
 ---
 
@@ -35,6 +36,7 @@ It integrates:
 - ROS2 bridge for image and detection streaming
 - OCR service communication (C++ -> Python)
 - Real-time crop extraction and classification feedback loop
+- Led logic to show judges what insect was detected
 
 It is the robot-side execution layer responsible for running the full perception system directly on embedded vision hardware.
 
@@ -49,10 +51,12 @@ Early experiments explored multiple architectures for classification and detecti
 | Baseline | Simple CNN | Limited generalization on real field data |
 | Transfer Learning | MobileNet | Improved accuracy but unstable under occlusions or multiple objects |
 | Detection (prototype) | YOLOv6 | Integration issues in ROS2 + embedded pipeline |
-| Final System | YOLOv11 + EasyOCR | Best balance of accuracy, speed, and deployability on OAK-D |
+| Final prototype | YOLOv11 + EasyOCR | Best balance of accuracy, speed, and deployability on OAK-D |
+| Final for Competition | YOLOv11 | Rule of competition changed and text reading was not needed anymore |
+
 
 YOLOv11 was selected as the final model due to:
-- strong real-time performance on edge devices
+- strong real-time performance on edge devices (especially model nano)
 - better robustness in cluttered environments
 - simpler ROS2 + DepthAI integration
 - improved stability for mixed inputs (images, puppets, text)
